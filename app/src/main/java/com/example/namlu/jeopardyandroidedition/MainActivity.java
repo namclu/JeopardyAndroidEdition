@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // References to buttons
+        // Reference to RadioButton
         RadioGroup questionOneGroup;
 
+        // Reference to CheckBox
         CheckBox questionTwoA;
         CheckBox questionTwoB;
         CheckBox questionTwoC;
@@ -46,19 +47,27 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         switch (compoundButton.getId()) {
             case R.id.cb_question_two_a:
-                Toast.makeText(this, "Checkbox a selected", Toast.LENGTH_SHORT).show();
+                if (isChecked) {
+                    Toast.makeText(this, "Checkbox a selected", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.cb_question_two_b:
-                Toast.makeText(this, "Checkbox b selected", Toast.LENGTH_SHORT).show();
+                if (isChecked) {
+                    Toast.makeText(this, "Checkbox b selected", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.cb_question_two_c:
-                Toast.makeText(this, "Checkbox c selected", Toast.LENGTH_SHORT).show();
+                if (isChecked) {
+                    Toast.makeText(this, "Checkbox c selected", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.cb_question_two_d:
-                Toast.makeText(this, "Checkbox d selected", Toast.LENGTH_SHORT).show();
+                if (isChecked) {
+                    Toast.makeText(this, "Checkbox d selected", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
@@ -79,5 +88,15 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 Toast.makeText(this, "RB d selected", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    // Checks if answers given to CheckBox questions are correct
+    void validateCheckBoxResponse() {
+
+    }
+
+    // Checks if answers given to RadioButton questions are correct
+    void validateRadioButtonResponse() {
+
     }
 }
