@@ -66,23 +66,28 @@
             android:text="Android supports these languages for application development."/>
 
         <LinearLayout
+            android:id="@+id/cb_group_question_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <CheckBox
+                android:id="@+id/cb_question_two_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="C++"/>
             <CheckBox
+                android:id="@+id/cb_question_two_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Java"/>
             <CheckBox
+                android:id="@+id/cb_question_two_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="JavaScript"/>
             <CheckBox
+                android:id="@+id/cb_question_two_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Python"/>
