@@ -110,13 +110,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="The correct order of the Android activity lifecycle"/>
-
-        <LinearLayout
+        
+        <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            
-        </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question"/>
+        </RadioGroup>
 
     </LinearLayout>
 
