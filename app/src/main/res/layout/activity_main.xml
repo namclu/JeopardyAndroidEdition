@@ -91,17 +91,32 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A ______ is a single, focused thing that a user can do."/>
+            android:text="A(n) ______ is a single, focused thing that a user can do."/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:hint="Enter your answer"/>
 
         <View style="@style/Divider"/>
 
         <!-- Question 4 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Answer #4"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The correct order of the Android activity lifecycle"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+        </LinearLayout>
 
     </LinearLayout>
 
