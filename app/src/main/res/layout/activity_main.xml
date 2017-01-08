@@ -11,6 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical">
 
         <!-- Question 1 -->
@@ -21,28 +23,33 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer 1"/>
+            android:text="It is used to create child views to represent the parent view items"/>
 
         <RadioGroup
+            android:id="@+id/rg_question_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rb_question_one_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Adapter"/>
             <RadioButton
+                android:id="@+id/rb_question_one_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Fragment"/>
             <RadioButton
+                android:id="@+id/rb_question_one_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Intent"/>
             <RadioButton
+                android:id="@+id/rb_question_one_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Service"/>
         </RadioGroup>
 
         <!-- Divider line -->
@@ -56,7 +63,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer 2"/>
+            android:text="Android supports these languages for application development."/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,19 +73,19 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question 1"/>
+                android:text="C++"/>
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question 1"/>
+                android:text="Java"/>
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question 1"/>
+                android:text="JavaScript"/>
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question 1"/>
+                android:text="Python"/>
         </LinearLayout>
 
         <View style="@style/Divider"/>
