@@ -88,22 +88,21 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedButtonId) {
+        // If response is correct, set points awarded to true, else set to false
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rb_question_one_a:
-                Toast.makeText(this, "RB a selected", Toast.LENGTH_SHORT).show();
+                correctResponses++;
+                questionOnePointsAwarded = true;
                 break;
             case R.id.rb_question_one_b:
-                Toast.makeText(this, "RB b selected", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.rb_question_one_c:
-                Toast.makeText(this, "RB c selected", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.rb_question_one_d:
-                Toast.makeText(this, "RB d selected", Toast.LENGTH_SHORT).show();
+                if (questionOnePointsAwarded) {
+                    correctResponses--;
+                    questionOnePointsAwarded = false;
+                }
                 break;
         }
-        // Check if answer is correct
-        validateRadioButtonResponse(checkedButtonId);
     }
 
     @Override
@@ -117,13 +116,5 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     // Checks if response given to CheckBox questions is correct
     void validateCheckBoxResponse() {
 
-    }
-
-    // Checks if response given to RadioButton question is correct
-    void validateRadioButtonResponse(int buttonId) {
-        // If correct question is selected, add +1 to questionsCorrect
-        if (buttonId == R.id.rb_question_one_a) {
-            correctResponses += 1;
-        }
     }
 }
