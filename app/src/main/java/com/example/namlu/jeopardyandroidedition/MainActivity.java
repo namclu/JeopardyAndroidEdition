@@ -13,28 +13,26 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         RadioGroup.OnCheckedChangeListener, View.OnClickListener{
 
     static final int NUM_OF_QUESTIONS = 4;
+
     /*
      * @param questionsCorrect tracks the number of questions answered correctly
      * @param questionOneToggle tracks if question one
      */
     int correctResponses = 0;
     boolean questionOnePointsAwarded = false;
+    boolean questionTwoPointsAwarded = false;
+
+    // Reference to RadioButton
+    RadioGroup questionOneGroup;
+
+    // Reference to CheckBoxes
+    CheckBox questionTwoA, questionTwoB, questionTwoC, questionTwoD;
+
+    // Reference to Button
+    Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // Reference to RadioButton
-        RadioGroup questionOneGroup;
-
-        // Reference to CheckBoxs
-        CheckBox questionTwoA;
-        CheckBox questionTwoB;
-        CheckBox questionTwoC;
-        CheckBox questionTwoD;
-
-        // Reference to Button
-        Button submitButton;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -64,24 +62,15 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         switch (compoundButton.getId()) {
             case R.id.cb_question_two_a:
-                if (isChecked) {
-                    Toast.makeText(this, "Checkbox a selected", Toast.LENGTH_SHORT).show();
-                }
-                break;
             case R.id.cb_question_two_b:
-                if (isChecked) {
-                    Toast.makeText(this, "Checkbox b selected", Toast.LENGTH_SHORT).show();
-                }
+                if (questionTwoA.isChecked() && questionTwoB.isChecked()) {
+                    questionTwoPointsAwarded = true;
+                } else
+                    questionTwoPointsAwarded = false;
                 break;
             case R.id.cb_question_two_c:
-                if (isChecked) {
-                    Toast.makeText(this, "Checkbox c selected", Toast.LENGTH_SHORT).show();
-                }
-                break;
             case R.id.cb_question_two_d:
-                if (isChecked) {
-                    Toast.makeText(this, "Checkbox d selected", Toast.LENGTH_SHORT).show();
-                }
+                questionTwoPointsAwarded = false;
                 break;
         }
     }
@@ -91,16 +80,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         // If response is correct, set points awarded to true, else set to false
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rb_question_one_a:
-                correctResponses++;
                 questionOnePointsAwarded = true;
                 break;
             case R.id.rb_question_one_b:
             case R.id.rb_question_one_c:
             case R.id.rb_question_one_d:
-                if (questionOnePointsAwarded) {
-                    correctResponses--;
-                    questionOnePointsAwarded = false;
-                }
+                questionOnePointsAwarded = false;
                 break;
         }
     }
@@ -109,12 +94,19 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public void onClick(View view) {
         // When user clicks on 'Submit', present Toast message with user's score
         if (view.getId() == R.id.button_submit) {
+            correctResponses = 0;
+            awardPoints();
             Toast.makeText(this, "Answers correct: " + correctResponses + "/" + NUM_OF_QUESTIONS, Toast.LENGTH_SHORT).show();
         }
     }
 
-    // Checks if response given to CheckBox questions is correct
-    void validateCheckBoxResponse() {
-
+    // Awards points based on number of correct responses
+    void awardPoints() {
+        if (questionOnePointsAwarded) {
+            correctResponses++;
+        }
+        if (questionTwoPointsAwarded) {
+            correctResponses++;
+        }
     }
 }
