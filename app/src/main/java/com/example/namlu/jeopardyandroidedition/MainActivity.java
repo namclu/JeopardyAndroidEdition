@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         RadioGroup.OnCheckedChangeListener, View.OnClickListener, TextWatcher{
 
     /*
-     * @param questionsCorrect tracks the number of questions answered correctly
-     * @param questionOneToggle tracks if question one
+     * @param questionsCorrect count of the number of questions answered correctly
+     * @param pointsAwarded an array that tracks the questions answered correctly
      */
     int questionsCorrect = 0;
     boolean[] pointsAwarded = {false, false, false, false, false, false};
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public void onClick(View view) {
         // When user clicks on 'Submit', calculate points and present Toast message with user's score
         if (view.getId() == R.id.button_submit) {
-            awardPoints();
+            getScore();
             Toast.makeText(this, "Answer(s) correct: " + questionsCorrect + "/" + pointsAwarded.length, Toast.LENGTH_SHORT).show();
         }
     }
@@ -195,8 +195,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
     }
 
-    // Awards points based on number of correct responses
-    void awardPoints() {
+    // Get score based on number of correct responses
+    void getScore() {
         // Reset correct responses to zero
         questionsCorrect = 0;
 

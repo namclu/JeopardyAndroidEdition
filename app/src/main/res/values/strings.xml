@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Jeopardy - Android Edition</string>
+    <string name="question_1_title">Question #1</string>
+    <string name="question_2_title">Question #2</string>
+    <string name="question_3_title">Question #3</string>
+    <string name="question_4_title">Question #4</string>
+    <string name="question_5_title">Question #5</string>
+    <string name="question_6_title">Question #6</string>
+    <string name="question_1">It is used to create child views to represent the parent view items.</string>
+    <string name="question_2">Android supports these languages for application development.</string>
+    <string name="question_3">A(n) ______ is a single, focused thing that a user can do.</string>
+    <string name="question_4">A class which can create only an object, which is shareable to all other classes.</string>
+    <string name="question_5">These are key components to the Android Architecture.</string>
+    <string name="question_6">A(n) ______ is a simple message object which is used to communicate from one activity to another.</string>
+    <string name="edit_text_hint">Enter your answer</string>
+    <string name="button_text_submit">Submit</string>
+    <string name="question_1_a">Adapter</string>
+    <string name="question_1_b">Fragment</string>
+    <string name="question_1_c">Intent</string>
+    <string name="question_1_d">Service</string>
+    <string name="question_2_a">C++</string>
+    <string name="question_2_b">Java</string>
+    <string name="question_2_c">JavaScript</string>
+    <string name="question_2_d">Python</string>
+    <string name="question_4_a">Anonymous</string>
+    <string name="question_4_b">Abstract</string>
+    <string name="question_4_c">Singleton</string>
+    <string name="question_4_d">String</string>
+    <string name="question_5_a">Android Applications</string>
+    <string name="question_5_b">Android Framework</string>
+    <string name="question_5_c">Libraries</string>
+    <string name="question_5_d">Linux Kernel</string>
 </resources>

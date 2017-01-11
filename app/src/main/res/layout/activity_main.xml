@@ -23,12 +23,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:text="Question #1"/>
+            android:text="@string/question_1_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="It is used to create child views to represent the parent view items."/>
+            android:text="@string/question_1"/>
 
         <RadioGroup
             android:id="@+id/rg_question_one"
@@ -39,22 +39,22 @@
                 android:id="@+id/rb_question_one_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Adapter"/>
+                android:text="@string/question_1_a"/>
             <RadioButton
                 android:id="@+id/rb_question_one_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fragment"/>
+                android:text="@string/question_1_b"/>
             <RadioButton
                 android:id="@+id/rb_question_one_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Intent"/>
+                android:text="@string/question_1_c"/>
             <RadioButton
                 android:id="@+id/rb_question_one_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Service"/>
+                android:text="@string/question_1_d"/>
         </RadioGroup>
 
         <!-- Divider line -->
@@ -65,12 +65,12 @@
             style="@style/HeadingQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question #2"/>
+            android:text="@string/question_2_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android supports these languages for application development."/>
+            android:text="@string/question_2"/>
 
         <LinearLayout
             android:id="@+id/cb_group_question_two"
@@ -82,22 +82,22 @@
                 android:id="@+id/cb_question_two_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C++"/>
+                android:text="@string/question_2_a"/>
             <CheckBox
                 android:id="@+id/cb_question_two_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Java"/>
+                android:text="@string/question_2_b"/>
             <CheckBox
                 android:id="@+id/cb_question_two_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JavaScript"/>
+                android:text="@string/question_2_c"/>
             <CheckBox
                 android:id="@+id/cb_question_two_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python"/>
+                android:text="@string/question_2_d"/>
         </LinearLayout>
 
         <View style="@style/Divider"/>
@@ -107,19 +107,19 @@
             style="@style/HeadingQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question #3"/>
+            android:text="@string/question_3_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A(n) ______ is a single, focused thing that a user can do."/>
+            android:text="@string/question_3"/>
 
         <EditText
             android:id="@+id/et_question_three"
             android:layout_width="@dimen/edit_text_width"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Enter your answer"/>
+            android:hint="@string/edit_text_hint"/>
 
         <View style="@style/Divider"/>
 
@@ -128,12 +128,12 @@
             style="@style/HeadingQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question #4"/>
+            android:text="@string/question_4_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A class which can create only an object, which is shareable to all other classes."/>
+            android:text="@string/question_4"/>
         
         <RadioGroup
             android:id="@+id/rg_question_four"
@@ -144,22 +144,22 @@
                 android:id="@+id/rb_question_four_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Annonymous"/>
+                android:text="@string/question_4_a"/>
             <RadioButton
                 android:id="@+id/rb_question_four_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Abstract"/>
+                android:text="@string/question_4_b"/>
             <RadioButton
                 android:id="@+id/rb_question_four_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Singleton"/>
+                android:text="@string/question_4_c"/>
             <RadioButton
                 android:id="@+id/rb_question_four_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="String"/>
+                android:text="@string/question_4_d"/>
         </RadioGroup>
 
         <View style="@style/Divider"/>
@@ -169,12 +169,12 @@
             style="@style/HeadingQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question #5"/>
+            android:text="@string/question_5_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="These are key components to the Android Architecture."/>
+            android:text="@string/question_5"/>
 
         <LinearLayout
             android:id="@+id/cb_group_question_five"
@@ -186,22 +186,22 @@
                 android:id="@+id/cb_question_five_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Android Applications"/>
+                android:text="@string/question_5_a"/>
             <CheckBox
                 android:id="@+id/cb_question_five_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Android Framework"/>
+                android:text="@string/question_5_b"/>
             <CheckBox
                 android:id="@+id/cb_question_five_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Libraries"/>
+                android:text="@string/question_5_c"/>
             <CheckBox
                 android:id="@+id/cb_question_five_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Linux Kernel"/>
+                android:text="@string/question_5_d"/>
         </LinearLayout>
 
         <View style="@style/Divider"/>
@@ -211,19 +211,19 @@
             style="@style/HeadingQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question #6"/>
+            android:text="@string/question_6_title"/>
         <TextView
             style="@style/TextQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A(n) ______ is a simple message object which is used to communicate from one activity to another."/>
+            android:text="@string/question_6"/>
 
         <EditText
             android:id="@+id/et_question_six"
             android:layout_width="@dimen/edit_text_width"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Enter your answer"/>
+            android:hint="@string/edit_text_hint"/>
 
         <View style="@style/Divider"/>
 
@@ -233,7 +233,7 @@
             style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"/>
+            android:text="@string/button_text_submit"/>
 
     </LinearLayout>
 
