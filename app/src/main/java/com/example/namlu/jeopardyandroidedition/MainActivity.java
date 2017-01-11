@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     // Do something when CheckBoxes are ticked
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        // Questions #2 - If response is correct, set PointsAwarded to true, else set to false
         switch (compoundButton.getId()) {
-            // Questions #2 - If response is correct, set PointsAwarded to true, else set to false
             case R.id.cb_question_two_a:
             case R.id.cb_question_two_b:
                 if (questionTwoA.isChecked() && questionTwoB.isChecked()) {
@@ -111,6 +111,22 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             case R.id.cb_question_two_d:
                 questionTwoPointsAwarded = false;
                 break;
+        }
+
+        // Questions #5 - If response is correct, set PointsAwarded to true, else set to false
+        switch (compoundButton.getId()) {
+            case R.id.cb_question_five_a:
+            case R.id.cb_question_five_b:
+            case R.id.cb_question_five_c:
+            case R.id.cb_question_five_d:
+                if (questionFiveA.isChecked() &&
+                        questionFiveB.isChecked() &&
+                        questionFiveC.isChecked() &&
+                        questionFiveD.isChecked()) {
+                    questionFivePointsAwarded = true;
+                } else {
+                    questionFivePointsAwarded = false;
+                }
         }
     }
 

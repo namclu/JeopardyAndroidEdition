@@ -159,7 +159,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android supports these languages for application development."/>
+            android:text="These are key components to the Android Architecture."/>
 
         <LinearLayout
             android:id="@+id/cb_group_question_five"
@@ -171,22 +171,22 @@
                 android:id="@+id/cb_question_five_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="C++"/>
+                android:text="Android Applications"/>
             <CheckBox
                 android:id="@+id/cb_question_five_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Java"/>
+                android:text="Android Framework"/>
             <CheckBox
                 android:id="@+id/cb_question_five_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JavaScript"/>
+                android:text="Libraries"/>
             <CheckBox
                 android:id="@+id/cb_question_five_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python"/>
+                android:text="Linux Kernel"/>
         </LinearLayout>
 
         <View style="@style/Divider"/>
