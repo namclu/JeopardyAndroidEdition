@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="It is used to create child views to represent the parent view items"/>
+            android:text="It is used to create child views to represent the parent view items."/>
 
         <RadioGroup
             android:id="@+id/rg_question_one"
@@ -122,7 +122,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The correct order of the Android activity lifecycle"/>
+            android:text="A class which can create only an object, which is shareable to all other classes."/>
         
         <RadioGroup
             android:id="@+id/rg_question_four"
@@ -130,21 +130,25 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rb_question_four_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Annonymous"/>
             <RadioButton
+                android:id="@+id/rb_question_four_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Abstract"/>
             <RadioButton
+                android:id="@+id/rb_question_four_c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="Singleton"/>
             <RadioButton
+                android:id="@+id/rb_question_four_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Question"/>
+                android:text="String"/>
         </RadioGroup>
 
         <!-- Question 5 -->
@@ -203,7 +207,6 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="Enter your answer"/>
-
 
         <!-- Submit results button -->
         <Button

@@ -128,6 +128,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 questionOnePointsAwarded = false;
                 break;
         }
+
+        // Question #4 - If response is correct, set PointsAwarded to true, else set to false
+        switch (radioGroup.getCheckedRadioButtonId()) {
+            case R.id.rb_question_four_c:
+                questionFourPointsAwarded = true;
+                break;
+            case R.id.rb_question_four_a:
+            case R.id.rb_question_four_b:
+            case R.id.rb_question_four_d:
+                questionFourPointsAwarded = false;
+                break;
+        }
     }
 
     // Do something when Button is pressed
@@ -177,6 +189,15 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             questionsCorrect++;
         }
         if (questionThreePointsAwarded) {
+            questionsCorrect++;
+        }
+        if (questionFourPointsAwarded) {
+            questionsCorrect++;
+        }
+        if (questionFivePointsAwarded) {
+            questionsCorrect++;
+        }
+        if (questionSixPointsAwarded) {
             questionsCorrect++;
         }
     }
