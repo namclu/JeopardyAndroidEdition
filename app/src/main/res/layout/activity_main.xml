@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer #1"/>
+            android:text="Question #1"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer #2"/>
+            android:text="Question #2"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer #3"/>
+            android:text="Question #3"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,13 +118,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Answer #4"/>
+            android:text="Question #4"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="The correct order of the Android activity lifecycle"/>
         
         <RadioGroup
+            android:id="@+id/rg_question_four"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -145,6 +146,64 @@
                 android:layout_height="wrap_content"
                 android:text="Question"/>
         </RadioGroup>
+
+        <!-- Question 5 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question #5"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android supports these languages for application development."/>
+
+        <LinearLayout
+            android:id="@+id/cb_group_question_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/cb_question_five_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="C++"/>
+            <CheckBox
+                android:id="@+id/cb_question_five_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Java"/>
+            <CheckBox
+                android:id="@+id/cb_question_five_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JavaScript"/>
+            <CheckBox
+                android:id="@+id/cb_question_five_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python"/>
+        </LinearLayout>
+
+        <View style="@style/Divider"/>
+
+        <!-- Question 6 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question #6"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A(n) ______ is a single, focused thing that a user can do."/>
+
+        <EditText
+            android:id="@+id/et_question_six"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Enter your answer"/>
+
 
         <!-- Submit results button -->
         <Button

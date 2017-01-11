@@ -16,25 +16,29 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener,
         RadioGroup.OnCheckedChangeListener, View.OnClickListener, TextWatcher{
 
-    static final int NUM_OF_QUESTIONS = 4;
+    static final int NUM_OF_QUESTIONS = 6;
 
     /*
      * @param questionsCorrect tracks the number of questions answered correctly
      * @param questionOneToggle tracks if question one
      */
-    int correctResponses = 0;
+    int questionsCorrect = 0;
     boolean questionOnePointsAwarded = false;
     boolean questionTwoPointsAwarded = false;
     boolean questionThreePointsAwarded = false;
+    boolean questionFourPointsAwarded = false;
+    boolean questionFivePointsAwarded = false;
+    boolean questionSixPointsAwarded = false;
 
     // Reference to RadioButton
-    RadioGroup questionOneGroup;
+    RadioGroup questionOneGroup, questionFourGroup;
 
     // Reference to CheckBoxes
-    CheckBox questionTwoA, questionTwoB, questionTwoC, questionTwoD;
+    CheckBox questionTwoA, questionTwoB, questionTwoC, questionTwoD,
+            questionFiveA, questionFiveB, questionFiveC, questionFiveD;
 
     // Reference to EditTextBoxes
-    EditText questionThree;
+    EditText questionThree, questionSix;
 
     // Reference to Button
     Button submitButton;
@@ -61,9 +65,30 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         questionTwoD = (CheckBox) findViewById(R.id.cb_question_two_d);
         questionTwoD.setOnCheckedChangeListener(this);
 
-        // Reference to question 3
+        // Listener question 3
         questionThree = (EditText) findViewById(R.id.et_question_three);
         questionThree.addTextChangedListener(this);
+
+        // Listener question 4
+        questionFourGroup = (RadioGroup) findViewById(R.id.rg_question_four);
+        questionFourGroup.setOnCheckedChangeListener(this);
+
+        // Listener question 5
+        questionFiveA = (CheckBox) findViewById(R.id.cb_question_five_a);
+        questionFiveA.setOnCheckedChangeListener(this);
+
+        questionFiveB = (CheckBox) findViewById(R.id.cb_question_five_b);
+        questionFiveB.setOnCheckedChangeListener(this);
+
+        questionFiveC = (CheckBox) findViewById(R.id.cb_question_five_c);
+        questionFiveC.setOnCheckedChangeListener(this);
+
+        questionFiveD = (CheckBox) findViewById(R.id.cb_question_five_d);
+        questionFiveD.setOnCheckedChangeListener(this);
+
+        // Listener question 6
+        questionSix = (EditText) findViewById(R.id.et_question_six);
+        questionSix.addTextChangedListener(this);
 
         // Listener for Submit button
         submitButton = (Button) findViewById(R.id.button_submit);
@@ -74,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         switch (compoundButton.getId()) {
+            // Questions #2 - If response is correct, set PointsAwarded to true, else set to false
             case R.id.cb_question_two_a:
             case R.id.cb_question_two_b:
                 if (questionTwoA.isChecked() && questionTwoB.isChecked()) {
@@ -91,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     // Do something when RadioBoxes are ticked
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedButtonId) {
-        // If response is correct, set points awarded to true, else set to false
+        // Question #1 - If response is correct, set PointsAwarded to true, else set to false
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rb_question_one_a:
                 questionOnePointsAwarded = true;
@@ -110,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         // When user clicks on 'Submit', calculate points and present Toast message with user's score
         if (view.getId() == R.id.button_submit) {
             awardPoints();
-            Toast.makeText(this, "Answers correct: " + correctResponses + "/" + NUM_OF_QUESTIONS, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Answers correct: " + questionsCorrect + "/" + NUM_OF_QUESTIONS, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -127,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     @Override
     public void afterTextChanged(Editable editable) {
+        // Question #3 - If user enters correct text, set PointsAwarded to true, else set to false
         String questionThreeString = questionThree.getText().toString();
         if (!TextUtils.isEmpty(questionThreeString)) {
             if (questionThreeString.equalsIgnoreCase("activity")) {
@@ -140,16 +167,17 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     // Awards points based on number of correct responses
     void awardPoints() {
         // Reset correct responses to zero
-        correctResponses = 0;
+        questionsCorrect = 0;
 
+        // Add points based on how many PointsAwarded set to true
         if (questionOnePointsAwarded) {
-            correctResponses++;
+            questionsCorrect++;
         }
         if (questionTwoPointsAwarded) {
-            correctResponses++;
+            questionsCorrect++;
         }
         if (questionThreePointsAwarded) {
-            correctResponses++;
+            questionsCorrect++;
         }
     }
 }
