@@ -190,6 +190,16 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 questionThreePointsAwarded = false;
             }
         }
+
+        // Question #6 - If user enters correct text, set PointsAwarded to true, else set to false
+        String questionSixString = questionSix.getText().toString();
+        if (!TextUtils.isEmpty(questionSixString)) {
+            if (questionSixString.equalsIgnoreCase("intent")) {
+                questionSixPointsAwarded = true;
+            } else {
+                questionSixPointsAwarded = false;
+            }
+        }
     }
 
     // Awards points based on number of correct responses

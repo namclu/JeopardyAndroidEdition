@@ -199,7 +199,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A(n) ______ is a single, focused thing that a user can do."/>
+            android:text="A(n) ______ is a simple message object which is used to communicate from one activity to another."/>
 
         <EditText
             android:id="@+id/et_question_six"
