@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
      * @param questionOneToggle tracks if question one
      */
     int questionsCorrect = 0;
+    boolean[] pointsAwarded = {false, false, false, false, false, false};
     boolean questionOnePointsAwarded = false;
     boolean questionTwoPointsAwarded = false;
     boolean questionThreePointsAwarded = false;
@@ -103,13 +104,16 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             case R.id.cb_question_two_a:
             case R.id.cb_question_two_b:
                 if (questionTwoA.isChecked() && questionTwoB.isChecked()) {
-                    questionTwoPointsAwarded = true;
+                    //questionTwoPointsAwarded = true;
+                    pointsAwarded[1] = true;
                 } else
-                    questionTwoPointsAwarded = false;
+                    //questionTwoPointsAwarded = false;
+                    pointsAwarded[1] = false;
                 break;
             case R.id.cb_question_two_c:
             case R.id.cb_question_two_d:
-                questionTwoPointsAwarded = false;
+                //questionTwoPointsAwarded = false;
+                pointsAwarded[1] = false;
                 break;
         }
 
@@ -123,9 +127,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                         questionFiveB.isChecked() &&
                         questionFiveC.isChecked() &&
                         questionFiveD.isChecked()) {
-                    questionFivePointsAwarded = true;
+                    //questionFivePointsAwarded = true;
+                    pointsAwarded[4] = true;
                 } else {
-                    questionFivePointsAwarded = false;
+                    //questionFivePointsAwarded = false;
+                    pointsAwarded[4] = false;
                 }
         }
     }
@@ -136,24 +142,28 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         // Question #1 - If response is correct, set PointsAwarded to true, else set to false
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rb_question_one_a:
-                questionOnePointsAwarded = true;
+                //questionOnePointsAwarded = true;
+                pointsAwarded[0] = true;
                 break;
             case R.id.rb_question_one_b:
             case R.id.rb_question_one_c:
             case R.id.rb_question_one_d:
-                questionOnePointsAwarded = false;
+//                questionOnePointsAwarded = false;
+                pointsAwarded[0] = false;
                 break;
         }
 
         // Question #4 - If response is correct, set PointsAwarded to true, else set to false
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rb_question_four_c:
-                questionFourPointsAwarded = true;
+//                questionFourPointsAwarded = true;
+                pointsAwarded[3] = true;
                 break;
             case R.id.rb_question_four_a:
             case R.id.rb_question_four_b:
             case R.id.rb_question_four_d:
-                questionFourPointsAwarded = false;
+//                questionFourPointsAwarded = false;
+                pointsAwarded[3] = false;
                 break;
         }
     }
@@ -164,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         // When user clicks on 'Submit', calculate points and present Toast message with user's score
         if (view.getId() == R.id.button_submit) {
             awardPoints();
-            Toast.makeText(this, "Answers correct: " + questionsCorrect + "/" + NUM_OF_QUESTIONS, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Answer(s) correct: " + questionsCorrect + "/" + NUM_OF_QUESTIONS, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -185,9 +195,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         String questionThreeString = questionThree.getText().toString();
         if (!TextUtils.isEmpty(questionThreeString)) {
             if (questionThreeString.equalsIgnoreCase("activity")) {
-                questionThreePointsAwarded = true;
+//                questionThreePointsAwarded = true;
+                pointsAwarded[2] = true;
             } else {
-                questionThreePointsAwarded = false;
+//                questionThreePointsAwarded = false;
+                pointsAwarded[2] = false;
             }
         }
 
@@ -195,9 +207,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         String questionSixString = questionSix.getText().toString();
         if (!TextUtils.isEmpty(questionSixString)) {
             if (questionSixString.equalsIgnoreCase("intent")) {
-                questionSixPointsAwarded = true;
+//                questionSixPointsAwarded = true;
+                pointsAwarded[5] = true;
             } else {
-                questionSixPointsAwarded = false;
+//                questionSixPointsAwarded = false;
+                pointsAwarded[5] = false;
             }
         }
     }
@@ -207,8 +221,13 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         // Reset correct responses to zero
         questionsCorrect = 0;
 
+        for (int i = 0; i < pointsAwarded.length; i++) {
+            if (pointsAwarded[i] == true) {
+                questionsCorrect++;
+            }
+        }
         // Add points based on how many PointsAwarded set to true
-        if (questionOnePointsAwarded) {
+        /*if (questionOnePointsAwarded) {
             questionsCorrect++;
         }
         if (questionTwoPointsAwarded) {
@@ -225,6 +244,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
         if (questionSixPointsAwarded) {
             questionsCorrect++;
-        }
+        }*/
     }
 }
