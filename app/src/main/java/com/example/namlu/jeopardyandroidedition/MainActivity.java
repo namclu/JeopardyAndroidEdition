@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     public void afterTextChanged(Editable editable) {
         // Question #3 - If user enters correct text, set PointsAwarded to true, else set to false
-        String questionThreeString = questionThree.getText().toString();
+        String questionThreeString = questionThree.getText().toString().trim();
         if (!TextUtils.isEmpty(questionThreeString)) {
             if (questionThreeString.equalsIgnoreCase("activity")) {
                 pointsAwarded[2] = true;
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
 
         // Question #6 - If user enters correct text, set PointsAwarded to true, else set to false
-        String questionSixString = questionSix.getText().toString();
+        String questionSixString = questionSix.getText().toString().trim();
         if (!TextUtils.isEmpty(questionSixString)) {
             if (questionSixString.equalsIgnoreCase("intent")) {
                 pointsAwarded[5] = true;
